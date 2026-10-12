@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javeria Bibi - Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:linear-gradient(180deg,#ffe4ec,#f5d0fe,#c4b5fd,#a5b4fc);color:#4c1d95;overflow-x:hidden}
+nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);padding:10px 22px;border-radius:30px;display:flex;gap:18px;z-index:10;box-shadow:0 8px 20px rgba(0,0,0,.1);font-weight:600;font-size:14px}
+.hero{text-align:center;padding:110px 20px 60px}
+.hero img{width:165px;height:165px;border-radius:50%;border:6px solid #fff;box-shadow:0 0 0 8px rgba(249,168,212,.6);object-fit:cover}
+h1{font-size:52px}h1 span{color:#ec4899}
+#typing{color:#db2777;font-size:28px;font-weight:700;height:35px}
+.bubble{position:fixed;bottom:-30px;background:rgba(255,255,255,.7);border-radius:50%;animation:up linear infinite;z-index:-1}
+@keyframes up{to{transform:translateY(-120vh)}}
+.orbit-sec{text-align:center;padding:40px 20px}
+.orbit{position:relative;width:500px;height:500px;margin:20px auto;max-width:90vw}
+.center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 10px 20px rgba(0,0,0,.1)}
+.skill{position:absolute;background:white;padding:10px 18px;border-radius:30px;box-shadow:0 5px 15px rgba(0,0,0,.1);font-size:13px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;padding:20px;max-width:1000px;margin:auto}
+.card{background:rgba(255,255,255,.9);padding:20px;border-radius:18px;border:1px solid #fbcfe8}
+.about{max-width:900px;margin:30px auto;background:rgba(255,255,255,.85);padding:25px;border-radius:20px}
+input,textarea{width:100%;padding:12px;margin:7px 0;border-radius:10px;border:1px solid #e9d5ff}
+.btn{background:linear-gradient(90deg,#a5b4fc,#f0abfc,#f9a8d4);border:none;padding:12px;width:100%;border-radius:10px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<nav><a>Home</a><a>Skills</a><a>Projects</a><a>About</a><a>Education</a></nav>
+<div class="hero">
+<img src="https://i.pravatar.cc/300?img=5" id="myPhoto">
+<h1>Javeria <span>Bibi</span></h1>
+<div id="typing"></div>
+<p>BS Computer Science - 3rd Semester<br>Fazaia College (Air University) | Creative | Fast Learner | Team Work</p>
+</div>
+
+<div class="orbit-sec">
+<h2>My Skills - Sea Pearls</h2>
+<div class="orbit">
+<div class="center">Javeria</div>
+<div class="skill" style="top:10%;left:40%">HTML</div>
+<div class="skill" style="top:20%;left:70%">CSS</div>
+<div class="skill" style="top:45%;left:85%">JavaScript</div>
+<div class="skill" style="top:75%;left:65%">React</div>
+<div class="skill" style="top:75%;left:20%">C++</div>
+<div class="skill" style="top:25%;left:10%">Data Structure</div>
+</div>
+</div>
+
+<div class="grid">
+<div class="card"><h3>YouTube Clone</h3><p>Responsive video grid & sidebar project</p></div>
+<div class="card"><h3>Rock Paper Scissors</h3><p>JS game with score & confetti</p></div>
+<div class="card"><h3>Small Chatbot</h3><p>Chatbot with typing effect</p></div>
+<div class="card"><h3>Portfolio Designs</h3><p>Luxury, Minimal, Sea World - All responsive</p></div>
+</div>
+
+<div class="about">
+<h2>About Me</h2><br>
+<p>Hi! I'm Javeria Bibi, BS CS Student at Fazaia College. I love to learn fast and work in team. My goal is to become a Full Stack Developer.</p>
+<br><h2>Education Journey</h2><br>
+<div class="grid" style="padding:0">
+<div class="card"><b>Matric</b> - Completed</div>
+<div class="card"><b>FSC Pre-Medical</b> - Completed</div>
+<div class="card" style="grid-column:span 2"><b>BS CS - 3rd Semester (Current)</b> - Fazaia College, Air University. Subjects: HTML, CSS, JS, C++, OOP, Data Structure</div>
+</div>
+</div>
+
+<div class="about" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div><h2>Let's Connect</h2><input placeholder="Your Name"><input placeholder="Your Email"><textarea placeholder="Message"></textarea><button class="btn">Send Message 💌</button></div>
+<div><h3>Javeria Bibi</h3><p>BS 3rd Semester<br>Email: javeria.bibi@email.com<br>Peshawar, Pakistan</p></div>
+</div>
+
+<script>
+const t=["Fast Learner","Sea Builder","Creative Student","Future Developer"];let a=0,b=0,d=false;
+function type(){let c=t[a];document.getElementById("typing").innerText=c.slice(0,b);if(!d){b++;if(b>c.length+6)d=true}else{b--;if(b==0){d=false;a=(a+1)%t.length}}setTimeout(type,110)}type();
+for(let i=0;i<28;i++){let e=document.createElement("div");e.className="bubble";e.style.left=Math.random()*100+"vw";e.style.width=e.style.height=(8+Math.random()*20)+"px";e.style.animationDuration=(6+Math.random()*12)+"s";e.style.animationDelay=Math.random()*4+"s";document.body.appendChild(e)}
+</script>
+</body>
+</html>
